@@ -21,8 +21,8 @@
                         </a>
                         <div class="collapse" id="collapseCampaigns" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="../campaigns/addCampaign.php">إضافة جملة</a>
-                                <a class="nav-link" href="../campaigns/showCampaign.php"> عرض الحملات </a>
+                                <a class="nav-link" href="addCampaign.php">إضافة حملة</a>
+                                <a class="nav-link" href="showCampaign.php"> عرض الحملات </a>
                             </nav>
                         </div>
                         
@@ -33,8 +33,8 @@
                         </a>
                         <div class="collapse" id="collapseArticles" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link" href="addArticle.php">إضافة مقالة</a>
-                                <a class="nav-link" href="showArticles.php">عرض المقالات</a>
+                                <a class="nav-link" href="../articles/addArticle.php">إضافة مقالة</a>
+                                <a class="nav-link" href="../articles/showArticles.php">عرض المقالات</a>
                             </nav>
                         </div>
                       

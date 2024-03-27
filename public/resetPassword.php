@@ -251,7 +251,9 @@ if(setCookiesToSession()){
     }
   </script>
     <script src="../js/filejs.js"></script>
-<script src="../js/FontAwesome.js"></script>
+    <script src="js/translateJs.js"></script>
+
+    <script src="../js/FontAwesome.js"></script>
 </body>
 
 </html>

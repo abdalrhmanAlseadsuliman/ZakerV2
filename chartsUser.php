@@ -200,7 +200,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
             <?php  include "footerAll.php"; ?>
         </div>
     </div>
-    <script src="js/filejs.js"></script>
+    <script src="js/filejs.js=1"></script>
     <script src="js/chartLib.js"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
@@ -211,7 +211,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
    
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/datatables1.13.6.js"></script>
-        <script src="js/FontAwesome.js"></script>
+    <script src="js/FontAwesome.js"></script>
 
     <script>
        

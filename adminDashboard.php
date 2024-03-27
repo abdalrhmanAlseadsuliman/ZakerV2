@@ -206,7 +206,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
 
   
 
-    <script src="js/filejs.js"></script>
+    <script src="js/filejs.js?v=2"></script>
     <script src="js/chartLib.js"></script>
     <script src="assets/demo/admin-chart-area.js"></script>
     <script src="assets/demo/admin-chart-bar.js"></script>
@@ -227,7 +227,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
             }
             
             try {
-                const response = await axios.get("https://zaker.click/prayersHandling/getPrayers.php");
+                const response = await axios.get("http://localhost/zaker/prayersHandling/getPrayers.php");
                 const prayersData = response.data;
                 // console.log(response);
 

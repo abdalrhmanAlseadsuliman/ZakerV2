@@ -1,3 +1,304 @@
+let ss="<br><br><br>";
+const translations = {
+  ar: {
+    t1: "الرئيسية",
+    t2: "عدد الاستغفار",
+    t3: "انشاء حساب",
+    t4: "تسجيل الدخول",
+t5: "تسجيل الخروج",
+t6: "تسجيل الخروج",
+t7: "تسجيل الخروج",
+t8: "لوحة التحكم",
+t9:"استغفار ",
+t10:"موقع ذاكر",
+t11:"حملة مليونية استغفار في شهر رجب",
+t12:` ﴿ وَلَوْ أَنَّهُمْ إِذْ ظَلَمُوا أَنْفُسَهُمْ جَاءُوكَ فَاسْتَغْفَرُوا اللَّهَ وَاسْتَغْفَرَ لَهُمُ الرَّسُولُ لَوَجَدُوا اللَّهَ تَوَّابًا رَحِيمًا ﴾ 
+اللهم صلِ وسلِم على الحبيب الشفيع الرؤوف الرحيم، الذي اخبر عن ربه الكريم أَنّ لله تعالى في كل نَفَس مئة أَلْف فرج قريب وسلِم تَسليمًا كثيرا. `,
+t13:"يرجى تسجيل الدخول او إنشاء حساب جديد كي تتمكن من إدخال عدد الاستغفار",
+t14:"علماً ان التسجيل لمرة واحدة ",
+t15:"تسجيل الدخول",
+t16:"انشاء حساب",
+t17:` اجعل هدفك في رجب 3 آلاف استغفار.
+ولأصحاب الهمة في الذكر 70 ألف استغفار.  `,
+t18:`  `,
+t19:`
+لحمد لله الغفار، الحمد لله الغفور، الحمد لله غافر الذنب، الحمد لله ذو المغفرة، وصلى الله وسلم وبارك على المختار سيدنا ومولانا رسول الله الذي قال: 
+(إنه ليغان على قلبي فأستغفر الله في المجلس سبعين مرة).
+والذي عد له الصحابة فقالوا: كنا نعد لرسول الله صلى الله عليه وسلم مئة من: (رب اغفرلي وارحمني وتب علي).
+
+اللهم بسر دعوات استغفارات سيد الرسل، وساداتنا الأنبياء في دعوة أبونا آدم و أمنا حواء 
+{ربنا ظلمنا أنفسنا وإن لم تغفر لنا وترحمنا لنكونن من الخاسرين} ، ونداء سيدنا يونس في بطن الحوت: 
+{لا إله إلا أنت سبحانك إني كنت من الظالمين} ، وما مرّ في القرآن والسنة من دعوات الأنبياء والأولياء والصالحين وسيد الاستغفار وتاج الاستغفار الذي أخبر عنه المختار .. 
+اللهم فاغفر لنا ذنوبنا وإسرافنا في أمرنا، اللهم وما أودعت في صلاة التسابيح من مغفرة الذنوب، و ما جعلت في صلاة التوبة في الليل والنهار وصلاة الأوابين، وما فوق ذلك ودون ذلك من أسرار المعاملة بين العبد ومولاه، نستغفرك لكل ذنب عرفناه أو جهلناه تذكرناه أو نسيناه، عمدا كان أو سهوا، جِدا كان أم هزلا، كبيرا كان أو صغيرا، علانية كان أو سرا، اللهم اغفر لنا ذلك، اللهم اغفر لنا ما نعلم وما لا نعلم.
+
+اللهم إنا نوينا في هذا الشهر شهر رجب، شهر العطايا والمعايا والهدايا والتحايا، وببركة الصلاة على مولى العجم والعرب، سيدنا ومولانا محمد، نستغفر بهذه الاستغفارات، حتى تغفر لنا فترفع ما ينزل من الغضب ومن البلاء ومن الوباء ومن الحروب ومن الفتن، وتحول حال العالم إلى أحسنه، ونستغفرك للبيوت والمنازل والذوات والهياكل، ونستغفرك للذين انتقلوا من أهلينا ومن أحبابنا وممن عرفناهم فيك إلى دار البرزخ، ونستغفرك للنشئ وللأولاد وللذرية، ونستغفرك لما في علمك من صالح النيات.
+
+و أن تزدنا قوة إلى قوتنا، وما ورد من آثار وثمار وفضائل هذا الاستغفار في كتابك وفي سنة سيد أحبابك، وما جربه رجال الذكر وأهل الفكر، اللهم اجعل لنا ذلك كله مخزون مصون في صحائفنا برحمتك يا أرحم الراحمين، وبارك في همة الأحباب في ذاكر، و اجعلنا من الذكّارين، اللهم إنا نوينا نشر ثقافة الذكر في العالمين، فاجعلنا من المذكورين، ورقِّنا إلى مراتب الذكر التي أودعتها لخاصة عبادك، واجعلنا مذكورين في ملئك الأعلى وعلى قوائم العرش عندك برحمتك يا أرحم الراحمين، اللهم هذا استغفارنا فنسألك اللهم مغفرتك، و نسألك رحمتك ونسألك عافيتك ونسألك فضلك ونسألك رضوانك، وعلى كل نية صالحة شاملة لخيرات الدنيا والآخرة، جالبة لكل خير، دافعة لكل شر وضير، ونستفتح في غرة رجب هذا الحرام الفرد الأصم الأصب البركة، جميع ما جاء فيه من أنوار وأسرار وخِلع وعطايا، حتى نكون من الممتثلين لأمرك، الواردين على قسمتك، الشاكرين لنعمتك
+ {وإن تعدوا نعمة الله لا تحصوها} 
+{وما بكم من نعمة فمن الله} 
+الحمد لله والشكر لله وصلى الله وسلم وبارك على سيدنا ومولانا رسول الله، و بارك الله في همة الذاكرين وهمة الشاكرين، وهمة المتفكرين، وفي همة العلماء والصلحاء والدعاة، وبارك الله في المرابطين والمجاهدين، والفرج العاجل عن جميع أهلينا في غزة والقدس وعسقلان وسوريا والعراق ولبنان ومصر واليمن الميمون وليبيا والسودان وفطاني وبورما وسائر البلاد الإسلامية، والشتات والمهجر، وأن الله يحول الحال إلى أحسنه، بسر النبي وآل النبي وإلى حضرة النبي صلى الله عليه وآله وصحبه وسلم.
+`,
+t20:" فيديوهات اختراناها لكم عن الاستغفار ",
+// t21:" من الاردن",
+t22:" بركات سيد الاستغفار في وقت السحر ",
+t23:"شاهد الفيديو",
+// t24:"من الهند",
+t25:" محاضرة قيمة عن معاني رجب والاستغفار فيه  ",
+t26:"شاهد الفيديو",
+// t27:" من الاردن",
+t28:" الاستغفار والصلاة على المختار (أوراد آخر الزمان) ",
+t29:"شاهد الفيديو ",
+t30:"حملة ذاكر هي من حملات ريبع المحبين" ,
+t31:"ربيع المحبين1445",
+t32:"تطوير فريق خادم - قسم البرمجة",
+t33:"التسجيل في الموقع",
+t34:"لماً ان التسجيل لمرة واحدة ",
+t35:"الاسم الاول",
+t36:"الكنية",
+t37:"عنوان البريد الالكتروني",
+t38:"البلد",
+t39:"الجنسية",
+t40:"كلمة السر",
+t41:"تأكيد كلمة السر",
+t42:"ذكر",
+t43:"انثى",
+t100:"ادخل عدد الاستغفار",
+
+t45:"ذاكر",
+t46:"تطوير فريق ذاكر",
+
+
+t44: "العمر",
+
+t46: "تم تطويره بواسطة فريق ذاكر",
+t47: "تذكرني",
+t48: "نسيت كلمة المرور",
+t49: "تسجيل الدخول",
+t50: "ذاكر",
+t51: "تم تطويره بواسطة فريق ذاكر",
+t52: "البريد الإلكتروني",
+t53: "كلمة المرور",
+t99:"الجنس",
+t77:"ذاكر",
+t88:"تسجيل",
+t89:"اختر اللغة",
+t90:"تسجيل الدخول",
+
+    arabic:"العربية",
+    english:"الإنجليزية"
+  
+  },
+  en: {
+    t1: "Home",
+    t2: "Number of Prayers",
+    t3: "Create an Account",
+    t4: "Log In",
+    t5: "Log Out",
+    t6: "Log Out",
+    t7: "Log Out",
+    t8: "Dashboard",
+    t9: "Prayer for the Greatest Beloved",
+    t10: "zakir Website",
+    t11: "Towards a billion prayers of peace and blessings upon the most noble of people, peace and blessings be upon him",
+    t12: `All praise and prayers and blessings be upon his beloved and chosen one in all prayers
+          and salutations offered by the people of existence. O Allah, make us among those who
+          excel in prayer and peace upon him, and among those who follow his path of prayer and
+          peace upon him, and among those who find joy in seeing and observing him, peace be upon
+          him.`,
+    t13: "Please log in or create a new account to enter your prayers.",
+    t14: "Note that registration is only required once.",
+    t15: "Log In",
+    t16: "Create an Account",
+    t17: "The closest people to me on the Day of Resurrection will be those who prayed the most upon me.",
+    t18: "O you who have believed, pray upon him and submit to him in peace.",
+    t19: `O Allah, accept these prayers and salutations within the circle of acceptance and in the
+          tenderness of the heart of the noble Prophet. O Allah, make the intentions behind these
+          prayers and salutations bring joy to his noble heart and renew the connection with his
+          righteous nation.
+         
+
+         
+          O Allah, make the proceeds of these prayers mercy, tranquility, love, and peace that
+          descend upon the people of this world and the people of this contemporary era, due to
+          what they have gained and what they have joined.
+         
+          O Allah, transform all of this through the blessings of prayers and peace upon the
+          Prophet, peace be upon him.
+          O Allah, make its effects present on every tongue that mentions and prays upon the
+          Prophet, peace be upon him and his family, and upon his household, children, time,
+          and state, including its provisions, guarantees, protections, manifestations, outpourings,
+          proceeds, material and spiritual sustenance.
+         
+          And know that Allah opens every closed door with these prayers and facilitates every
+          difficult matter with them. And Allah writes us among the special people who pray upon
+          the Prophet, peace be upon him, and makes us bearers of the banner of prayer and peace
+          upon him in the worlds.
+         
+          And Allah brings our gathering near to Him on the Day of Resurrection and makes us the
+          best in character, as desired by the Prophet, peace be upon him, in terms of virtues,
+          blessings, and gifts for the praying and Muslim community upon him at all times, in
+          every occasion, and especially on Friday night and Friday. And Allah makes these prayers
+          and salutations a booty for us in the presence of His landmarks, knowledge, love, and
+          following of His Prophet, peace be upon him.
+         
+          And Allah makes them a means of fulfilling the rights of the Prophet, peace be upon him,
+          in terms of honoring, venerating, and respecting him.`,
+    t20: "Scholars' Participation in the zakir Campaign",
+    t21: "From Jordan",
+    t22: "Sheikh Awn Al-Qudumi",
+    t23: "Watch the Video",
+    t24: "From India",
+    t25: "His Eminence Al-Sayyid Ibrahim Al-Khalil Al-Bukhari",
+    t26: "Watch the Video",
+    t27: "From Jordan",
+    t28: "Sheikh Awn Al-Qudumi",
+    t29: "Watch the Video",
+    t30: "zakir Campaign is one of the campaigns of the loving spring",
+    t31: "Rabi' Al-Muhibbin 1445",
+    t32: "Development of the Servant Team - Programming Department",
+    t33: "Register on the Website",
+    t34: "Note that registration is only required once.",
+    t35: "First Name",
+    t36: "Last Name",
+    t37: "Email Address",
+    t38: "Country",
+    t39: "Nationality",
+    t40: "Password",
+    t41: "Confirm Password",
+    t42:"male",
+t43:"female",
+t44:"age",
+t45:"zaker",
+t46:"developed by zaker team",
+t47:"remember me",
+t48:"do you frogat password",
+t49:"login",
+t50:"zaker",
+t51:"developed by zaker team",
+t52:"email",
+t53:"password",
+t99:"gender",
+t77:"zaker",
+t100:"Enter the number of your prayers",
+t88:"Sign Up",
+t90:"Sign In",
+
+  arabic: "Arabic",
+    english:"English"
+  },
+};
+
+const languageSelector = document.getElementById("languageSelector");
+
+if (languageSelector) {
+  languageSelector.addEventListener("change", handleLanguageChange);
+  
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const language = localStorage.getItem("lang") || "ar";
+  console.log(language);
+  setLanguage(language);
+  getPrayersAll();
+  getPrayersUsers();
+
+});
+
+function handleLanguageChange(event) {
+  const selectedLanguage = event.target.value;
+  setLanguage(selectedLanguage);
+  localStorage.setItem("lang", selectedLanguage);
+  var lang = localStorage.getItem("lang") || "ar";
+  var elements1 = document.getElementsByTagName("*");
+
+  for (var i = 0; i < elements1.length; i++) {
+    var element11 = elements1[i];
+    if(element11.id==="AllPrayers"){
+      break;
+    }
+    
+
+    if (lang === "en") {
+      element11.style.direction = "ltr";
+    } else { element11.style.direction = "rtl";
+     }
+}
+
+getPrayersUsers();
+
+}
+
+function setLanguage(language) {
+  const elements = document.querySelectorAll("[data-i18n]");
+  elements.forEach((element) => {
+    const translationKey = element.getAttribute("data-i18n");
+    element.textContent = getTranslation(language, translationKey);
+    
+  });
+  // document.dir = language === "ar" ? "rtl" : "ltr";
+}
+
+function getTranslation(language, translationKey) {
+  return translations[language][translationKey];
+}
+
+// تغيير اتجاه العناصر عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", () => {
+  var lang = localStorage.getItem("lang") || "ar";
+  var elements1 = document.getElementsByTagName("*");
+
+  for (var i = 0; i < elements1.length; i++) {
+    var element11 = elements1[i];
+    if(element11.id==="AllPrayers"){
+      break;
+    } 
+    
+
+    if (lang === "en") {
+      element11.style.direction = "ltr";
+    } else {element11.style.direction = "rtl";
+     }
+  }
+
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function startCountdownAndRedirect(seconds, elementId, redirectUrl) {
   const countdownElement = document.getElementById(elementId);
   countdownElement.textContent = `سيتم التحويل خلال ${seconds} ثواني`;
@@ -307,28 +608,27 @@ function getUsersNumber() {
     });
 }
 
-
 async function addArticle(event) {
   event.preventDefault();
 
-  // const featuredImage = document.getElementById("featuredImage").files[0];
+  const featuredImage = document.getElementById("featuredImage").files[0];
 
-  // if (
-  //   featuredImage &&
-  //   !["image/png", "image/jpeg", "image/jpg"].includes(featuredImage.type)
-  // ) {
-  //   document.getElementById("imgErrors").textContent =
-  //     "الملف غير مدعوم. يجب أن يكون نوع الملف صورة (png, jpg, jpeg).";
-  //   document.getElementById("featuredImage").value = "";
-  //   return;
-  // }
+  if (
+    featuredImage &&
+    !["image/png", "image/jpeg", "image/jpg"].includes(featuredImage.type)
+  ) {
+    document.getElementById("imgErrors").textContent =
+      "الملف غير مدعوم. يجب أن يكون نوع الملف صورة (png, jpg, jpeg).";
+    document.getElementById("featuredImage").value = "";
+    return;
+  }
 
   try {
     let x = await getUsersDataNumber(); // انتظار حل الوعد
     const formData = new FormData(document.getElementById("MyAddArticle"));
-    // formData.delete("featuredImage");
+    formData.delete("featuredImage");
     formData.append("userId", x["UserId"]);
-    // formData.append("featuredImage", featuredImage);
+    formData.append("featuredImage", featuredImage);
 
     const response = await axios.post(
       "http://localhost/zaker/articles/handlingAddArticle.php",
@@ -625,19 +925,7 @@ async function addPrayersIndex(event) {
     
       const lang = localStorage.getItem("lang");
 
-     if (lang === "en") {
-      if (document.getElementById("prayerCount").value > 1000000) {
-        document.getElementById("prayerCountError").textContent =
-          " It is not possible to enter more than one million prayers for the Messenger of Allah in one transaction ";
-        document.getElementById("prayerCount").value = "";
-        return;
-      } else if (document.getElementById("prayerCount").value < 0) {
-        document.getElementById("prayerCountError").textContent =
-          " You cannot enter a negative number ";
-        document.getElementById("prayerCount").value = "";
-        return;
-      }
-    } else {
+    if (lang === "ar") {
       if (document.getElementById("prayerCount").value > 1000000) {
         document.getElementById("prayerCountError").textContent =
           "لا يمكن إدخال أكثر من مليون في العملية الواحدة";
@@ -646,6 +934,18 @@ async function addPrayersIndex(event) {
       } else if (document.getElementById("prayerCount").value < 0) {
         document.getElementById("prayerCountError").textContent =
           "لا يمكن إدخال عدد سالب";
+        document.getElementById("prayerCount").value = "";
+        return;
+      }
+    } else if (lang === "en") {
+      if (document.getElementById("prayerCount").value > 1000000) {
+        document.getElementById("prayerCountError").textContent =
+          " It is not possible to enter more than one million prayers for the Messenger of Allah in one transaction ";
+        document.getElementById("prayerCount").value = "";
+        return;
+      } else if (document.getElementById("prayerCount").value < 0) {
+        document.getElementById("prayerCountError").textContent =
+          " You cannot enter a negative number ";
         document.getElementById("prayerCount").value = "";
         return;
       }
@@ -673,8 +973,8 @@ async function addPrayersIndex(event) {
       
       if(lang === "ar"){
         previousPrayersUser.textContent =
-        parseInt(previousPrayersUser.textContent) + parseInt(prayer) + " عدد الصلوات التي قمت بإدخالها حتى الآن ";
-        alert(" تم إضافة عدد الصلوات بنجاح");
+        parseInt(previousPrayersUser.textContent) + parseInt(prayer) + " عدد الاستغفارات التي قمت بإدخالها حتى الآن ";
+        alert(" تم إضافة عدد الاستغفار بنجاح");
      
       }else if(lang === "en"){
         previousPrayersUser.textContent =
@@ -685,8 +985,8 @@ async function addPrayersIndex(event) {
           previousPrayersUser.textContent =
             parseInt(previousPrayersUser.textContent) +
             parseInt(prayer) +
-            " عدد الصلوات التي قمت بإدخالها حتى الآن ";
-          alert(" تم إضافة عدد الصلوات بنجاح");
+            " عدد الاستغفارات التي قمت بإدخالها حتى الآن ";
+          alert(" تم إضافة عدد الاستغفار بنجاح");
         }
       
       
@@ -696,20 +996,25 @@ async function addPrayersIndex(event) {
       if (isNaN(previousPrayers)){
         totalPrayers = parseInt(prayer)  ;
         document.getElementById("AllPrayers").textContent = totalPrayers;
+        // alert(" تم إضافة عدد الاستغفار بنجاح");
       }else{
         totalPrayers = parseInt(prayer) + previousPrayers ;
         document.getElementById("AllPrayers").textContent = totalPrayers;
+        // alert(" تم إضافة عدد الاستغفار بنجاح");
       }
 
       if (previousPrayersUser.textContent.trim() === ""){
         if(lang === "ar"){
-          previousPrayersUser.textContent = parseInt(prayer)  + " عدد الصوات التي قمت بإدخالها حتى الآن "   ;
-          alert(" تم إضافة عدد الصلوات بنجاح");
+          previousPrayersUser.textContent = parseInt(prayer)  + " عدد الاستغفارات التي قمت بإدخالها حتى الآن "   ;
+          alert(" تم إضافة عدد الاستغفار بنجاح");
        
         }else if(lang === "en"){
           previousPrayersUser.textContent = parseInt(prayer)  +  " Your prayers on the prophet of Allah ";
           alert(" Your prayer count has been entered successfully " );
        
+        }else{
+          previousPrayersUser.textContent = parseInt(prayer)  + " عدد الاستغفارات التي قمت بإدخالها حتى الآن "   ;
+          alert(" تم إضافة عدد الاستغفار بنجاح");
         }
         
         document.getElementById("prayerCount").value = "";
@@ -718,25 +1023,21 @@ async function addPrayersIndex(event) {
 
         if(lang === "ar"){
           previousPrayersUser.textContent =
-          parseInt(previousPrayersUser.textContent) + parseInt(prayer) + " عدد الصلوات التي قمت بإدخالها حتى الآن "
-          alert(" تم إضافة عدد الصلوات بنجاح");
+          parseInt(previousPrayersUser.textContent) + parseInt(prayer)
+           + " عدد الاستغفارات التي قمت بإدخالها حتى الآن "
+          alert(" تم إضافة عدد الاستغفار بنجاح");
        
         }else if(lang === "en"){
           previousPrayersUser.textContent =
           parseInt(previousPrayersUser.textContent) + parseInt(prayer) + " Your prayers on the prophet of Allah ";
           alert(" Your prayer count has been entered successfully " );
        
-        } else{
-            previousPrayersUser.textContent =
-          parseInt(previousPrayersUser.textContent) + parseInt(prayer) + " عدد الصلوات التي قمت بإدخالها حتى الآن "
-          alert(" تم إضافة عدد الصوات بنجاح");
-       
-        }
+        }       
         document.getElementById("prayerCount").value = "";
       }
       
     } else if(response.data.insertPrayer == "خطأ في عدد الصلوات"){
-      document.getElementById("prayerCountError").textContent = "لا يمكن إدخال أكثر من ميلون الصلوات في العملية الواحدة"
+      document.getElementById("prayerCountError").textContent = "لا يمكن إدخال أكثر من ميلون استغفار في العملية الواحدة"
       document.getElementById("prayerCount").value = "";
      }else {
       alert("لم يتم الإضافة");
@@ -816,12 +1117,12 @@ async function getPrayersUsers() {
     console.log(response);
     // console.log(response.data[0]["TotalPrayers"]);
     const lang = localStorage.getItem("lang");
-   if (response.data[0]["TotalPrayers"]) {
+    if (response.data[0]["TotalPrayers"]) {
     
     if(lang === "ar"){
 
       document.getElementById("usersPrayers").textContent =   response.data[0]["TotalPrayers"]
-       + " عدد الصلوات التي قمت بإدخالها حتى الآن "
+       + " عدد الاستغفارات التي قمت بإدخالها حتى الآن "
       ;
     }
     else if(lang==="en"){
@@ -830,7 +1131,7 @@ async function getPrayersUsers() {
     }else {
         document.getElementById("usersPrayers").textContent =
           response.data[0]["TotalPrayers"]  
-          + " عدد الصلوات التي قمت بإدخالها حتى الآن ";
+          + " عدد الاستغفارات التي قمت بإدخالها حتى الآن ";
           
       } 
   }

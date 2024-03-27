@@ -268,7 +268,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
             const formData = new FormData();
             formData.append("userId", x['UserId']);
 
-            const response = await axios.post("https://zaker.click/prayersHandling/getPrayers.php", formData);
+            const response = await axios.post("http://localhost/zaker/prayersHandling/getPrayers.php", formData);
             const prayersData = response.data;
 
             localStorage.setItem('prayersData', JSON.stringify(prayersData));

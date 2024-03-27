@@ -17,7 +17,7 @@ setCookiesToSession();
   <link rel="icon" href="./img/logo.png" type="image/png">
   <link rel="stylesheet" href="./css/odometer.css" />
   <link href="./css/tailwind.css" rel="stylesheet">
-  <link href="./css/myStyle.css" rel="stylesheet">
+  <link href="./css/myStyle.css?v2" rel="stylesheet">
   <script strc="js/translate.js"></script>
   <script strc="js/translations.js"></script>
 </head>
@@ -51,9 +51,9 @@ setCookiesToSession();
             </li>
             <li class="mr-3">
               <select class="py-2 px-4 text-white  border-none bg-transparent inline-block hover:text-gray-400  no-underline hover:underline toggleColour " id="languageSelector">
-                <option  selected> اختر اللغة  </option>
+                <option selected> اختر اللغة </option>
                 <option value="ar" data-i18n="arabic" class="text-gray-700 hover:text-gray-900">Arabic</option>
-                <option value="en" data-i18n="english" class="text-gray-700 hover:text-gray-900" >English</option>
+                <option value="en" data-i18n="english" class="text-gray-700 hover:text-gray-900">English</option>
               </select>
             </li>
             <?php
@@ -73,7 +73,7 @@ setCookiesToSession();
           <li class="mr-3">
             <a class="inline-block text-white hover:text-gray-300 text-black no-underline hover:underline py-2 px-4" href="./auth/logout.php" data-i18n="t6"> تسجيل الخروج </a>
           </li>
-          <h1>sdsd</h1>
+
           <!-- <button id="navAction" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             <a class="text-gray-800 hover:text-gray-600 text-black no-underline hover:underline py-2 px-4" href="./userDashboard.php">لوحة التحكم</a>
           </button> -->
@@ -102,16 +102,16 @@ setCookiesToSession();
         صلاة على الحبيب الأعظم ﷺ
       </h3>
 
-      
+
     </div>
     <div class="container px-7 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <!--Left Col-->
       <div class="flex flex-col w-full md:w-3/5 justify-center items-center text-right">
-        <p class="uppercase tracking-loose w-full" data-i18n="t10" >موقع ذاكر</p>
+        <p class="uppercase tracking-loose w-full" data-i18n="t10">موقع ذاكر</p>
         <h1 class="my-4 text-5xl font-bold leading-tight" data-i18n="t11">
-          نحو مليارية الصلاة والسلام على أشرف الأنام ﷺ
+          نحو مليارية الصلاة والسلام على أشرف الأنام
         </h1>
-        <p class="leading-normal text-2xl mb-8"  data-i18n="t12">
+        <p class="leading-normal text-2xl mb-8" data-i18n="t12">
           الحمد لله وصلى الله وسلَّم وبارك على حبيبه ومصطفاه بجميع الصلوات
           والتسليمات التي يصلي بها أهل الوجود اللهم اجعلنا من ألهج الخلق في
           الصلاة والسلام عليه ومن أنهج الخلق في متابعته عليه الصلاة والسلام
@@ -120,7 +120,7 @@ setCookiesToSession();
         <form class="flex flex-col w-full md:w-3/5 justify-center items-center text-right" id="MyParyersNumber">
           <div class="relative">
 
-            <input type="number" list="myList" class="block text-black flex-1 bg-white border border-gray-300 hover:border-gray-500 rounded px-4 py-2 leading-tight focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="أدخل عدد صلواتك" id="prayerCount" name="prayerCount"  data-i18n="t100" />
+            <input type="number" list="myList" class="block text-black flex-1 bg-white border border-gray-300 hover:border-gray-500 rounded px-4 py-2 leading-tight focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="أدخل عدد صلواتك" id="prayerCount" name="prayerCount" data-i18n="t100" />
             <datalist id="myList">
               <option value="100"></option>
               <option value="300"></option>
@@ -152,7 +152,7 @@ setCookiesToSession();
               </a>
 
               <a href="./public/signUp.php" class="mx-auto lg:mx-0 w-1/3 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out mt-2" data-i18n="t16">
-                إنشاء حساب 
+                إنشاء حساب
               </a>
             </div>
         </form>
@@ -189,41 +189,41 @@ setCookiesToSession();
       <!-- مجموع الصلوات اصبح في الاعلى -->
       <div class="flex flex-wrap">
         <div class="w-5/6 sm:w-1/2 p-6">
-          <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3" style="color:rgb(26, 159, 118)"; style="line-height: 1.5; text-align: justify ;" data-i18n="t17">
-          إنَّ أولى النَّاسِ بي يَومَ القيامةِ أَكْثرُهُم عليَّ صلاةً
-          </h3>
-          
-          <h3 id = "usersPrayers" class="text-3xl text-gray-800 font-bold leading-none mb-3" style="line-height: 1.5; text-align: justify ;margin-top: 10px;" data-i18n="t969">
-            
+          <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3" style="color:rgb(26, 159, 118)" ; style="line-height: 1.5; text-align: justify ;" data-i18n="t17">
+            إنَّ أولى النَّاسِ بي يَومَ القيامةِ أَكْثرُهُم عليَّ صلاةً
           </h3>
 
-        </div> 
-     
+          <h3 id="usersPrayers" class="text-3xl text-gray-800 font-bold leading-none mb-3" style="line-height: 1.5; text-align: justify ;margin-top: 10px;" data-i18n="t969">
+
+          </h3>
+
+        </div>
+
         <div class="max-w-lg sm:w-1/2 p-6">
-          <img src="./img/salat.png" alt="" />
+          <img src="./img/salat1.png" alt="" />
         </div>
       </div>
       <div class="flex flex-wrap flex-col-reverse sm:flex-row">
-        <div class="max-w-lg p-6 mt-6">
+        <!-- <div class="max-w-lg p-6 mt-6">
           <img src="./img/nawaya.png" alt="" />
-        </div>
+        </div> -->
 
-        <div class="w-full sm:w-1/2 p-6 mt-6">
+        <div class="w-full sm:w-1/2 p-6 mt-6" style="width: 100%;">
           <div class="align-middle">
-            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3" style="color:rgb(26, 159, 118)"; data-i18n="t18">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3" style="color:rgb(26, 159, 118)" ; data-i18n="t18">
               يا أيها الذين آمنوا صلّوا عليه وسلّموا تسليما
             </h3>
             <br />
             <p class="text-gray-600 mb-8 text-lg" data-i18n="t19">
-            اللهم اجعل هذه الصلوات وهذه التسليمات في دائرة القبول، وفي حنانة قلب الحبيب الرسول ﷺ واجعل اللهم من نوايا هذه الصلوات والتسليمات إدخال السرور على قلبه الشريف وتجديد الوصل بأمته الحنيفة
+              اللهم اجعل هذه الصلوات وهذه التسليمات في دائرة القبول، وفي حنانة قلب الحبيب الرسول ﷺ واجعل اللهم من نوايا هذه الصلوات والتسليمات إدخال السرور على قلبه الشريف وتجديد الوصل بأمته الحنيفة
 
-اللهم اجعل واردات هذه الصلوات رحمة وسكينة ومحبة وسلاما تتنزل على أهلِ هذا العالمِ وعلى أهل هذه المرحلة المعاصرة من آثار ما وقع لهم من اكتسابات ومن انتسابات
+              اللهم اجعل واردات هذه الصلوات رحمة وسكينة ومحبة وسلاما تتنزل على أهلِ هذا العالمِ وعلى أهل هذه المرحلة المعاصرة من آثار ما وقع لهم من اكتسابات ومن انتسابات
 
-اللهم اجعل تحولات ذلك ببركة الصلاة والسلام على النبي ﷺ، واجعل اللهم آثارها على كل لسان يذكر ويصلي على النبي ﷺ وعلى بيته وعلى أسرته وعلى أولاده وعلى زمانه وعلى قطره بما فيها من تأمينات وضمانات وحصانات وتجليات وإفاضات وواردات وأرزاق حسيات ومعنويات
+              اللهم اجعل تحولات ذلك ببركة الصلاة والسلام على النبي ﷺ، واجعل اللهم آثارها على كل لسان يذكر ويصلي على النبي ﷺ وعلى بيته وعلى أسرته وعلى أولاده وعلى زمانه وعلى قطره بما فيها من تأمينات وضمانات وحصانات وتجليات وإفاضات وواردات وأرزاق حسيات ومعنويات
 
-وأن الله يفتح بهذه الصلوات كل باب مغلق وييسر بها كل أمر عسير وأن الله يكتبنا في خواص المصلين على النبي ﷺ ويجعلنا من حملة لواء الصلاة والسلام عليه في العالمين
-وأن الله يقرب مجلسنا منه يوم القيامة ويجعلنا من الأحاسن أخلاقا وما أودع النبي ﷺ من فضائل ومن بركات ومن عطايا المصلين والمسلمين عليه في سائر الأوقات وفي كل ميقات وفي خصوصية ليلة الجمعة ويوم الجمعة وأن الله يجعل هذه الصلوات والتسليمات غنيمة لنا بين يدي معالمته ومعرفته ومحبته ومتابعته ﷺ
-وأن الله يجعلها من باب القيامِ بحقوق النبي ﷺ من تعزير وتعزيز وتوقير
+              وأن الله يفتح بهذه الصلوات كل باب مغلق وييسر بها كل أمر عسير وأن الله يكتبنا في خواص المصلين على النبي ﷺ ويجعلنا من حملة لواء الصلاة والسلام عليه في العالمين
+              وأن الله يقرب مجلسنا منه يوم القيامة ويجعلنا من الأحاسن أخلاقا وما أودع النبي ﷺ من فضائل ومن بركات ومن عطايا المصلين والمسلمين عليه في سائر الأوقات وفي كل ميقات وفي خصوصية ليلة الجمعة ويوم الجمعة وأن الله يجعل هذه الصلوات والتسليمات غنيمة لنا بين يدي معالمته ومعرفته ومحبته ومتابعته ﷺ
+              وأن الله يجعلها من باب القيامِ بحقوق النبي ﷺ من تعزير وتعزيز وتوقير
             </p>
           </div>
         </div>
@@ -241,21 +241,21 @@ setCookiesToSession();
       <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
         <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
           <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-            <p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t21">
-              من الأردن
-            </p>
-            <div class="w-full font-bold text-xl text-gray-800 px-6" data-i18n="t22" >
+            <!--<p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t21">-->
+            <!--  من الأردن-->
+            <!--</p>-->
+            <div class="w-full font-bold text-xl text-gray-800 px-6" data-i18n="t22">
               الشيخ عون القدومي
             </div>
             <p class="text-gray-800 text-base px-6 mb-5">
-              <iframe width="300" height="300" src="https://www.youtube.com/embed/eTEKyS5wng8" title="مليارية الصلاة والسلام على رسول الله ﷺ || وإطلاق موقع ذاكر || مترجم إلى الإنجليزية والصومالية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="300" height="300" src="https://www.youtube.com/embed/TxsPw1vy57c" title="الشيخ عون القدومي || مزايا شهر شعبان الحسان" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </p>
           </a>
         </div>
         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
           <div class="flex items-center justify-start">
             <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              <a href="https://www.youtube.com/watch?v=eTEKyS5wng8" data-i18n="t23">شاهد الفيديو</a>
+              <a href="https://www.youtube.com/watch?v=TxsPw1vy57c" data-i18n="t23">شاهد الفيديو</a>
             </button>
           </div>
         </div>
@@ -264,19 +264,19 @@ setCookiesToSession();
       <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
         <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
           <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-            <p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t24"> من الهند </p>
+            <!--<p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t24"> من الهند </p>-->
             <div class="w-full font-bold text-xl text-gray-800 px-6" data-i18n="t25">
-              فضيلة العلامة السيد إبراهيم الخليل البخاري
+              الشيخ عون القدزمي
             </div>
-            <p class="text-gray-800 text-base px-6 mb-5">
-              <iframe width="300" height="300" src="https://www.youtube.com/embed/Ej7zP5fu51I" title="مشاركة جامعة معدن الثقافة الإسلامية في كيرالا - الهند في حملة مليارية الصلاة والسلام على رسول الله ﷺ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </p>
+            < class="text-gray-800 text-base px-6 mb-5">
+              <iframe width="300" height="300" src="https://www.youtube.com/embed/0PLr9Jw9UbM" title="الشيخ عون القدومي ll شهر شعبان ودفع الغفلة فيه" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </p>
           </a>
         </div>
         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
           <div class="flex items-center justify-start">
             <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              <a href="https://www.youtube.com/watch?v=Ej7zP5fu51I" data-i18n="t26">شاهد الفيديو</a>
+              <a href="https://www.youtube.com/watch?v=0PLr9Jw9UbM" data-i18n="t26">شاهد الفيديو</a>
             </button>
           </div>
         </div>
@@ -286,19 +286,19 @@ setCookiesToSession();
       <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
         <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
           <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-            <p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t27"> من الأردن </p>
+            <!--<p class="w-full text-gray-600 text-xs md:text-sm px-6" data-i18n="t27"> من الأردن </p>-->
             <div class="w-full font-bold text-xl text-gray-800 px-6" data-i18n="t28">
               الشيخ عون القدومي
             </div>
             <p class="text-gray-800 text-base px-6 mb-5">
-              <iframe width="300" height="300" src="https://www.youtube.com/embed/H0N7kFtFCb8" title="حملة لواء الصلاة والسلام على رسول الله" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe width="300" height="300" src="https://www.youtube.com/embed/2sUhmYfOrJM" title="بالصلاة على النبي ﷺ _ الشيخ عون القدومي حفظه الله تعالى" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </p>
           </a>
         </div>
         <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
           <div class="flex items-center justify-start">
             <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              <a href="https://www.youtube.com/watch?v=H0N7kFtFCb8" data-i18n="t29">شاهد الفيديو</a>
+              <a href="https://www.youtube.com/shorts/2sUhmYfOrJM?feature=share" data-i18n="t29">شاهد الفيديو</a>
             </button>
           </div>
         </div>
@@ -323,7 +323,7 @@ setCookiesToSession();
     </g>
   </svg>
   <section class="container mx-auto text-center py-6 mb-12">
-    <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white" data-i18n="t30" >
+    <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white" data-i18n="t30">
       حملة ذاكر هي من حملات ريبع المحبين
     </h2>
     <div class="w-full mb-4">
@@ -334,9 +334,9 @@ setCookiesToSession();
         Action!
       </button> -->
   </section>
- 
+
   <?php include "footerFront.php" ?>
- 
+
   <a href="https://t.me/ZakerClick" class="teleIcon">
     <i class="fab fa-telegram" style="background: #fff; border-radius: 50%; font-size: 40px;"></i>
   </a>
@@ -434,27 +434,21 @@ setCookiesToSession();
       input.value = displayValue;
     }
   </script>
- <script strc="js/translate.js"></script>
+  <script strc="js/translate.js"></script>
   <script strc="js/translations.js"></script>
 
   <script src="js/odometer.js"></script>
   <script src="js/FontAwesome.js"></script>
-  <script src="js/filejs.js?v=7"></script>
+  <script src="js/filejs.js?v='12'"></script>
+  <script src="js/translateJs.js"></script>
   <script src="js/axios.js"></script>
- 
+
   <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      getPrayersAll();
+      getPrayersUsers();
 
-
-
-
-
-    
-   window.addEventListener('DOMContentLoaded', function() {
-getPrayersAll();
-getPrayersUsers();
-
-});
-    
+    });
   </script>
 
 </body>

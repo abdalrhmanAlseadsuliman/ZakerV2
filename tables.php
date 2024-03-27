@@ -189,7 +189,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
         </div>
     </div>
 
-    <script src="js/filejs.js"></script>
+    <script src="js/filejs.js?v=1"></script>
     <!-- <script src="js/chartLib.js"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script> -->
@@ -213,7 +213,7 @@ if (isset($_SESSION['typeUsers']) && !empty($_SESSION['typeUsers']) && $_SESSION
                 formData.append("userId", x['UserId']);
 
                 console.log(formData)
-                const response = await axios.post("https://zaker.click/prayersHandling/getPrayerAdmin.php", formData);
+                const response = await axios.post("http://localhost/zaker/prayersHandling/getPrayerAdmin.php", formData);
                 const prayersData = response.data;
                 console.log(response)
 

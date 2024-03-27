@@ -56,4 +56,3 @@ function redirectToLogoutPage() {
     header("Location: ../auth/logout.php");
     exit;
 }
-?>

@@ -601,6 +601,8 @@ if (setCookiesToSession()) {
     }
   </script>
   <script src="../js/filejs.js?v=5"></script>
+  <script src="js/translateJs.js"></script>
+
   <script>
     
   </script>

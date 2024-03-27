@@ -11,7 +11,23 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             لوحة التحكم 
                         </a>
+
+                        <!-- العمليات -->
                         <div class="sb-sidenav-menu-heading">عمليات</div>
+                        <!-- الحملات -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCampaigns" aria-expanded="false" aria-controls="collapseCampaigns">
+                            <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
+                           إدارة الحملات
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseCampaigns" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link" href="campaigns/addCampaign.php">إضافة جملة</a>
+                                <a class="nav-link" href="campaigns/showCampaign.php"> عرض الحملات </a>
+                            </nav>
+                        </div>
+                      
+                        <!-- المقالات -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseArticles" aria-expanded="false" aria-controls="collapseArticles">
                             <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                            إدارة المقالات
@@ -23,7 +39,9 @@
                                 <a class="nav-link" href="articles/showArticles.php">عرض المقالات</a>
                             </nav>
                         </div>
-                      
+
+
+
                         <div class="sb-sidenav-menu-heading">إحصائيات</div>
                         <a class="nav-link" href="charts.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
