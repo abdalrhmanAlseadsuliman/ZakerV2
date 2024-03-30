@@ -1,5 +1,4 @@
 <?php
-
 include "../db/dbConn.php";
 
 function validateRequiredFields($fields, &$errors)
@@ -46,11 +45,18 @@ function validateVideoLink($link, $field, &$errors)
 }
 
 // تحقق نجاح تحميل الملفات
-function validateFileUploads($fileFields, &$errors, &$imageNameAll)
+function validateFileUploads($fileFields, &$errors, &$imageNameAll,$connection,$data)
 {
+
+    $query = "SELECT image_names FROM campaigns WHERE id = '$data[idCampaign]'";
+    $result = mysqli_query($connection,$query);
+    $row = mysqli_fetch_assoc($result);
+    $img = json_decode($row['image_names'],true);
+
     foreach ($fileFields as $field) {
         if (!isset($_FILES[$field]) || $_FILES[$field]['error'] !== UPLOAD_ERR_OK) {
-            $errors[$field] = 'الرجاء تحميل الصورة';
+            $imageNameAll[$field] =  $img[$field];
+           
         } else {
             $fileType = $_FILES[$field]['type'];
             $allowedTypes = ['image/jpeg', 'image/png']; // أنواع الملفات المسموح بها (مثال: JPEG و PNG)
@@ -69,6 +75,7 @@ function validateFileUploads($fileFields, &$errors, &$imageNameAll)
             }
         }
     }
+    
 }
 
 // تحقق من التابع بالغة العربية
@@ -83,10 +90,10 @@ function is_arabic_title($title_arabic, &$errors)
 
 
 // تحقق من ان عنوان الحملة غير مخزن مسبقا
-function check_title_arabic_exists($title_arabic, $connection, &$errors)
+function check_title_arabic_exists($title_arabic,$idCampaign, $connection, &$errors)
 {
     // $query = "SELECT COUNT(*)  FROM campaigns WHERE titleArabic = '$title_arabic'";
-    $query = "SELECT   *  FROM campaigns WHERE titleArabic = '$title_arabic'";
+    $query = "SELECT   *  FROM campaigns WHERE titleArabic = '$title_arabic' AND id != '$idCampaign' ";
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_assoc($result);
     // $count = $row['COUNT(*)'];
@@ -97,29 +104,27 @@ function check_title_arabic_exists($title_arabic, $connection, &$errors)
 
 
 // تخزين البيانات
-function InsertData($connection, $data, $imageNameAll)
+function updateData($connection, $data, $imageNameAll)
 {
     $imageNamesJson = json_encode($imageNameAll);
 
-    if ($data['statusCampaign'] == 0) {
+    if ($data['statusCampaign'] == 1) {
         $data['status'] = 'الحملة غير مفعلة';
-    } elseif ($data['statusCampaign'] == 1) {
+    } elseif ($data['statusCampaign'] == 2) {
 
         $data['status'] = 'الحملة مفعلة';
     }
 
-    $query = " INSERT INTO campaigns (  titleArabic, subtitleCounter, mainTitle, mainParag, title2, title3, nawaya, title4, titleVideo1, titleVideo2, titleVideo3, embedLink1, embedLink2, embedLink3, linkVideo1, linkVideo2, linkVideo3, endTitle, dateCampaign, status, status_value, image_names)
-    VALUES ('$data[titleArabic]', '$data[subtitleCounter]', '$data[mainTitle]', '$data[mainParag]', '$data[title2]', '$data[title3]', '$data[nawaya]', '$data[title4]', '$data[titleVideo1]', '$data[titleVideo2]', '$data[titleVideo3]', '$data[embedLink1]', '$data[embedLink2]', '$data[embedLink3]', '$data[linkVideo1]', '$data[linkVideo2]', '$data[linkVideo3]', '$data[endTitle]', '$data[dateCampaign]', '$data[status]', $data[statusCampaign],'$imageNamesJson')";
-
+    $query = "UPDATE campaigns SET titleArabic = '$data[titleArabic]', subtitleCounter = '$data[subtitleCounter]', mainTitle = '$data[mainTitle]', mainParag = '$data[mainParag]', title2 = '$data[title2]', title3 = '$data[title3]', nawaya = '$data[nawaya]', title4 = '$data[title4]', titleVideo1 = '$data[titleVideo1]', titleVideo2 = '$data[titleVideo2]', titleVideo3 = '$data[titleVideo3]', embedLink1 = '$data[embedLink1]', embedLink2 = '$data[embedLink2]', embedLink3 = '$data[embedLink3]', linkVideo1 = '$data[linkVideo1]', linkVideo2 = '$data[linkVideo2]', linkVideo3 = '$data[linkVideo3]', endTitle = '$data[endTitle]', dateCampaign = '$data[dateCampaign]', status = '$data[status]', status_value = $data[statusCampaign], image_names = '$imageNamesJson' WHERE id = $data[idCampaign]";
 
 
     $result = mysqli_query($connection, $query);
 
     $response = array();
     if ($result) {
-        $response['responseCampaign'] = 'تم إنشاء الحملة بنجاح';
+        $response['responseCampaign'] = 'تم تعديل الحملة بنجاح';
     } else {
-        $response['responseCampaign'] = 'فشل إنشاء الحملة';
+        $response['responseCampaign'] = 'فشل تعديل الحملة';
     }
 
     return $response;
@@ -129,15 +134,9 @@ function InsertData($connection, $data, $imageNameAll)
 // [titleEnglish, titleArabic, subtitleCounter ,mainTitle, mainParag, 1 mainImg ,title2 , 2 img2 , title3. nawaya, 3 img3, title4 ,titleVideo1 , titleVideo2, titleVideo3, embedLink1, embedLink2, embedLink3, linkVideo1, linkVideo2,linkVideo3 ,endTitle ,dateCampaign]
 
 
-if  ( 
-    isset($_SESSION['Email']) && isset($_SESSION['typeUsers']) &&
-    !empty($_SESSION['Email']) && !empty($_SESSION['typeUsers']) &&
-    $_SESSION['typeUsers'] === 'admin'
-)
-{
 $errors = array();
 $imageNameAll = array();
-
+// echo json_encode($_POST);
 $fields = array(
     // 'titleEnglish'     => 'عنوان الحملة باللغة الإنجليزية',
     'titleArabic'      => 'عنوان الحملة باللغة العربية',
@@ -161,7 +160,6 @@ $fields = array(
     'dateCampaign'     => 'تاريخ الحملة',
     'statusCampaign'   => 'حالة الحملة',
 );
-
 // التحقق من عدم فراغ الحقول
 validateRequiredFields($fields, $errors);
 
@@ -172,7 +170,7 @@ is_arabic_title($_POST['titleArabic'], $errors);
 // التحقق من ان الحملة غير موجودة مسبقا
 if (empty($errors['titleArabic'])) {
 
-    check_title_arabic_exists($_POST['titleArabic'], $connection, $errors);
+    check_title_arabic_exists($_POST['titleArabic'], $_POST['idCampaign'] ,$connection, $errors);
 }
 // التحقق من صحة رابط الفيديو
 validateYouTubeUrl($_POST['linkVideo1'], 'linkVideo1', $errors);
@@ -193,18 +191,13 @@ validateVideoLink($_POST['linkVideo2'], 'linkVideo2', $errors);
 validateVideoLink($_POST['linkVideo3'], 'linkVideo3', $errors);
 
 // التحقق من نجاح تحميل الملفات
-validateFileUploads(['mainImg', 'img2', 'img3'], $errors, $imageNameAll);
+validateFileUploads(['mainImg', 'img2', 'img3'], $errors, $imageNameAll,$connection,$_POST);
 
-// إذا لم يكن هناك أخطاء، قم بإنشاء الجدول والتخزين
+// إذا لم يكن هناك أخطاء، قم بتحديث الجدول والتخزين
 if (empty($errors)) {
     // createTableAndStoreData($connection,$_POST) ;
-    echo json_encode(InsertData($connection, $_POST, $imageNameAll));
+    echo json_encode(updateData($connection, $_POST, $imageNameAll));
 } else {
     // إرجاع المصفوفة $errors كإجابة
     echo json_encode($errors);
 }
-}else {
-    $response["message"] = " ليس لديك صلاحية للوصول ";
-}
-
-// echo json_encode($response);

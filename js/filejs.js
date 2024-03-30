@@ -437,7 +437,7 @@ function editArticle(article) {
   window.location.href = "../articles/editArticle.php";
 }
 
-function editPost(event, articleId, userArticleId) {
+async function editPost(event, articleId, userArticleId) {
   event.preventDefault();
 
   const featuredImage = document.getElementById("featuredImage").files[0];
@@ -459,10 +459,11 @@ function editPost(event, articleId, userArticleId) {
     formData.append("articleId", articleId);
     formData.append("featuredImage", featuredImage);
 
-    const response = axios.post(
+    const response = await axios.post(
       "http://localhost/zaker/articles/handlingEditArticle.php",
       formData
     );
+    
     document.getElementById("titleErrors").textContent = "";
     document.getElementById("contentErrors").textContent = "";
     document.getElementById("excerptErrors").textContent = "";
@@ -521,82 +522,84 @@ function deleteArticle(articleId) {
   );
 }
 
-async function addPrayers(event) {
-  event.preventDefault();
+// async function addPrayers(event) {
+//   event.preventDefault();
 
-  try {
-    let x = await getUsersDataNumber(); // انتظار حل الوعد
-    // الحصول على التاريخ الحالي بالتقويم الهجري
-    var currentDate = new Date();
-    var year = currentDate.getFullYear();
-    var month = currentDate.getMonth() + 1;
-    var day = currentDate.getDate();
-    var formattedDate = day + "-" + month + "-" + year;
-    var apiUrl = "http://api.aladhan.com/v1/gToH/" + formattedDate;
+//   try {
+//     let x = await getUsersDataNumber(); // انتظار حل الوعد
+//     // الحصول على التاريخ الحالي بالتقويم الهجري
+//     var currentDate = new Date();
+//     var year = currentDate.getFullYear();
+//     var month = currentDate.getMonth() + 1;
+//     var day = currentDate.getDate();
+//     var formattedDate = day + "-" + month + "-" + year;
+//     var apiUrl = "http://api.aladhan.com/v1/gToH/" + formattedDate;
 
-    const response1 = await fetch(apiUrl);
-    const data = await response1.json();
-    var hijriDate = data.data.hijri.date + "-" + data.data.hijri.month.ar;
+//     const response1 = await fetch(apiUrl);
+//     const data = await response1.json();
+//     var hijriDate = data.data.hijri.date + "-" + data.data.hijri.month.ar;
 
-    const formData = new FormData(document.getElementById("MyParyersNumber"));
-    formData.append("userId", x["UserId"]);
-    formData.append("hijriDate", hijriDate);
+//     const formData = new FormData(document.getElementById("MyParyersNumber"));
+//     formData.append("userId", x["UserId"]);
+//     formData.append("hijriDate", hijriDate);
 
-    const dataForm = {};
-    formData.forEach((value, key) => {
-      dataForm[key] = value;
-    });
-    console.log(dataForm.prayerCount);
+//     const dataForm = {};
+//     formData.forEach((value, key) => {
+//       dataForm[key] = value;
+//     });
+//     console.log(dataForm.prayerCount);
 
-    const response = await axios.post(
-      "http://localhost/zaker/prayersHandling/prayersCountHandling.php",
-      formData
-    );
-    document.getElementById("prayerCountError").textContent = "";
+//     const response = await axios.post(
+//       "http://localhost/zaker/prayersHandling/prayersCountHandling.php",
+//       formData
+//     );
+//     document.getElementById("prayerCountError").textContent = "";
 
-    if (response.data.prayerCount) {
-      document.getElementById("prayerCountError").textContent =
-        response.data.prayerCount;
-    }
+//     if (response.data.prayerCount) {
+//       document.getElementById("prayerCountError").textContent =
+//         response.data.prayerCount;
+//     }
 
-    if (response.data.insertArticle == "تم إضافة عدد صلواتك بنجاح") {
-      var table = $("#datatablesSimple").DataTable();
-      var currentRow = table.row(table.data().length - 1).data();
+//     if (response.data.insertArticle == "تم إضافة عدد صلواتك بنجاح") {
+//       var table = $("#datatablesSimple").DataTable();
+//       var currentRow = table.row(table.data().length - 1).data();
 
-      if (currentRow) {
-        var previousNumberPrayers = parseInt(currentRow.NumberPrayers);
-        var newNumberPrayers =
-          parseInt(previousNumberPrayers) + parseInt(dataForm.prayerCount);
+//       if (currentRow) {
+//         var previousNumberPrayers = parseInt(currentRow.NumberPrayers);
+//         var newNumberPrayers =
+//           parseInt(previousNumberPrayers) + parseInt(dataForm.prayerCount);
         
-        currentRow.NumberPrayers = newNumberPrayers;
-        table
-          .row(table.data().length - 1)
-          .data(currentRow)
-          .draw();
-        alert("تم إضافة عدد صلواتك بنجاح");
-      }
-    } else if (response.data.insertArticle == "تم إدخال عدد صلواتك بنجاح") {
-      var table = $("#datatablesSimple").DataTable();
-      var currentRow = table.row(table.data().length - 1).data();
-      table.row
-        .add({
-          ترتيب: table.data().length + 1,
-          NumberPrayers: dataForm.prayerCount,
-          Date: dataForm.hijriDate,
-        })
-        .draw();
-      alert("تم إدخال عدد صلواتك بنجاح");
-    } else {
-      alert("لم يتم الإضافة");
-    }
-  } catch (error) {
-    // التعامل مع الأخطاء في الطلب
-    console.error("حدث خطأ أثناء إرسال الطلب:", error);
-  }
-}
+//         currentRow.NumberPrayers = newNumberPrayers;
+//         table
+//           .row(table.data().length - 1)
+//           .data(currentRow)
+//           .draw();
+//         alert("تم إضافة عدد صلواتك بنجاح");
+//       }
+//     } else if (response.data.insertArticle == "تم إدخال عدد صلواتك بنجاح") {
+//       var table = $("#datatablesSimple").DataTable();
+//       var currentRow = table.row(table.data().length - 1).data();
+//       table.row
+//         .add({
+//           ترتيب: table.data().length + 1,
+//           NumberPrayers: dataForm.prayerCount,
+//           Date: dataForm.hijriDate,
+//         })
+//         .draw();
+//       alert("تم إدخال عدد صلواتك بنجاح");
+//     } else {
+//       alert("لم يتم الإضافة");
+//     }
+//   } catch (error) {
+//     // التعامل مع الأخطاء في الطلب
+//     console.error("حدث خطأ أثناء إرسال الطلب:", error);
+//   }
+// }
 
 let totalPrayers = 0;
 
+
+// إضافة الاذكار من الصفحة الرئسية 
 
 async function addPrayersIndex(event) {
   event.preventDefault();
@@ -764,10 +767,14 @@ async function addPrayersIndex(event) {
 //     console.error("حدث خطأ أثناء إرسال الطلب:", error);
 //   }
 // }
-async function getPrayersAll() {
-  try {
-    const response = await axios.get(
-      "http://localhost/zaker/prayersHandling/getPrayersAll.php"
+async function getPrayersAll(idCampaign) {
+  try { 
+
+    const formData = new FormData();
+    formData.append("idCampaign", idCampaign );
+
+    const response = await axios.post(
+      "http://localhost/zaker/prayersHandling/getPrayersAll.php",formData
     );
     totalPrayers = response.data[0]["TotalPrayers"];
     
@@ -798,23 +805,25 @@ async function getPrayersAll() {
 // getPrayersAll();
 
 
-async function getPrayersUsers() {
+//  معرفة عدد اذكار المستخدم
+async function getPrayersUsers(idCampaign) {
   try {
 
     let x = await getUsersNumber(); // انتظار حل الوعد
     if (x == false) {
       return;
     }
+
+
+
     const formData = new FormData();
     formData.append("userId", x["UserId"]);
-    // const data = {
-    //   userId: x["UserId"]
-    // };
+    formData.append("idCampaign", idCampaign );
+    
     const response = await axios.post(
       "http://localhost/zaker/prayersHandling/getPrayersUsers.php", formData
     );
-    console.log(response);
-    // console.log(response.data[0]["TotalPrayers"]);
+    
     const lang = localStorage.getItem("lang");
    if (response.data[0]["TotalPrayers"]) {
     

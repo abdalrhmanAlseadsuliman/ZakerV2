@@ -22,7 +22,7 @@
                         <div class="collapse" id="collapseCampaigns" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link" href="addCampaign.php">إضافة حملة</a>
-                                <a class="nav-link" href="showCampaign.php"> عرض الحملات </a>
+                                <a class="nav-link" href="showCampaigns.php"> عرض الحملات </a>
                             </nav>
                         </div>
                         

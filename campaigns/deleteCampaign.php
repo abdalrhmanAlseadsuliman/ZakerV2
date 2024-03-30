@@ -1,6 +1,6 @@
 <?php
-include "../db/dbConn.php";
 session_start();
+include "../db/dbConn.php";
 $response = [];
 if  ( 
         isset($_SESSION['Email']) && isset($_SESSION['typeUsers']) &&
@@ -12,9 +12,9 @@ if  (
             $json = file_get_contents('php://input');
             $data = json_decode($json, true);
             $postData = $data;
-            if ( isset($postData["ArticleId"]) && !empty($postData["ArticleId"])){
+            if ( isset($postData["IdCampaign"]) && !empty($postData["IdCampaign"])){
                
-                $sql = "DELETE FROM articles WHERE ArticleId = '$postData[ArticleId]'";
+                $sql = "DELETE FROM campaigns WHERE id = '$postData[IdCampaign]'";
                 $result = mysqli_query($connection,$sql) ;
                 if ($result) {
                     $response["message"] = "تم الحذف بنجاح";

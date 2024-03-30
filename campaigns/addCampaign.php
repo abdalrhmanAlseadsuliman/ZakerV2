@@ -46,11 +46,7 @@ if (isUserLoggedIn() && !isUserAdmin()) {
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li> -->
+                
                     <li><a class="dropdown-item" href="../auth/logout.php">تسجيل الخروج</a></li>
                 </ul>
             </li>
@@ -92,13 +88,7 @@ if (isUserLoggedIn() && !isUserAdmin()) {
 
 
                                 <form id="MyAddCampaigns" enctype="multipart/form-data">
-                                    <!-- عنوان الحملة التي يجب ان تنشاء الجدول في قاعدة البيانات بنفس الاسم يجب ان يكون إنكليزي -->
-                                    <div class="mb-3">
-                                        <label for="titleEnglish" class="form-label"> عنوان الحملة يجب ان يكون في لغة الإنجليزية</label>
-                                        <input type="text" class="form-control" id="titleEnglish" name="titleEnglish" required>
-                                        <span id="titleEnglishErrors" class="error"></span>
-                                    </div>
-
+                                   
                                     <div class="mb-3">
                                         <label for="titleArabic" class="form-label"> عنوان الحملة يجب ان يكون في لغة العربي</label>
                                         <input type="text" class="form-control" id="titleArabic" name="titleArabic" required>

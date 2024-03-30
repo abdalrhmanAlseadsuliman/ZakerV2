@@ -1,6 +1,6 @@
 <?php
-include "../db/dbConn.php";
 session_start();
+include "../db/dbConn.php";
 $response = [];
 if  ( 
         isset($_SESSION['Email']) && isset($_SESSION['typeUsers']) &&
@@ -12,22 +12,22 @@ if  (
             $json = file_get_contents('php://input');
             $data = json_decode($json, true);
             $postData = $data;
-            if ( isset($postData["ArticleId"]) && !empty($postData["ArticleId"])){
+            if ( isset($postData["IdCampaign"]) && !empty($postData["IdCampaign"])){
                
-                $sql = "DELETE FROM articles WHERE ArticleId = '$postData[ArticleId]'";
+                $sql = "DELETE FROM SchedulePrayers WHERE campaign_id = '$postData[IdCampaign]'";
                 $result = mysqli_query($connection,$sql) ;
                 if ($result) {
-                    $response["message"] = "تم الحذف بنجاح";
+                    $response["message"] = "تمت التهيئة";
                 }
                 else{
-                    $response["message"] = " خطأ اثناء الحذف ";
+                    $response["message"] = " خطأ اثناء التهيئة ";
                 }
             } else {
-                $response["message"] = " خطأ في ارسال بيانات الحذف ";
+                $response["message"] = " خطأ في ارسال بيانات التهيئة ";
             }         
         }
     }else {
-        $response["message"] = " خطأ في ارسال بيانات الحذف ";
+        $response["message"] = " خطأ في ارسال بيانات التهيئة ";
     }
 
     echo json_encode($response);

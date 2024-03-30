@@ -207,8 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const language = localStorage.getItem("lang") || "ar";
   console.log(language);
   setLanguage(language);
-  getPrayersAll();
-  getPrayersUsers();
+  getPrayersAll(20);
+  getPrayersUsers(22);
 
 });
 
@@ -232,7 +232,7 @@ function handleLanguageChange(event) {
      }
 }
 
-getPrayersUsers();
+getPrayersUsers(22);
 
 }
 
