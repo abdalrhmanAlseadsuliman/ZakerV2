@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 session_start();
 include "../db/dbConn.php";
 if  ( 
@@ -7,24 +8,27 @@ if  (
         $_SESSION['typeUsers'] === 'admin'
     )
     {
-        $sql = "SELECT articles.*, CONCAT(users.FirstName, ' ', users.LastName) AS publisher_name
-        FROM articles
-        JOIN users ON articles.UserIdArticle = users.UserId";
+        $sql = "SELECT * FROM campaigns WHERE status_value = 2";
 
         $result = mysqli_query($connection,$sql) ;
         if ($result) {
-            $articles = array();
+            $campaigns = array();
         
             while ($row = mysqli_fetch_assoc($result)) {
-                $articles[] = $row;
+                $data = json_decode($row['image_names'], true);
+                $row['mainImg'] = $data['mainImg'];
+                $row['img2'] = $data['img2'];
+                $row['img3'] = $data['img3'];
+                unset($row['image_names']);
+                $campaigns[] = $row;
             }
             
-            echo json_encode($articles);
+            echo json_encode($campaigns);
         } else {
             echo json_encode(array('error' => 'خطا في تنفيذ الاستعلام'));
         }
 
     } else{
         echo json_encode(array('error' => 'ليس لديك صلاحيات في الوصول'));
-    }
+    } 
 

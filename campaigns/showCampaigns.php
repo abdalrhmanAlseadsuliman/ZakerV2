@@ -98,7 +98,7 @@ if (isUserLoggedIn() && !isUserAdmin()) {
     <script src="../js/filejs.js"></script>
     <script src="../js/handlingCampaign.js"></script>
     <script>
-        // استدعاء تابع استرجاع المقالات عند تحميل الصفحة
+        // استدعاء تابع استرجاع الحملات عند تحميل الصفحة
         window.onload = fetchCampaigns;
     </script>
 

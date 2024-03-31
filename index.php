@@ -504,6 +504,13 @@ setCookiesToSession();
     });
   </script>
 
+<script>
+        // استدعاء تابع استرجاع الحملات عند تحميل الصفحة
+        window.onload = fetchCampaignsIndex;
+</script>
+
+
+
 </body>
 
 </html>

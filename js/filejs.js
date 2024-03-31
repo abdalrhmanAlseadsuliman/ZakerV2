@@ -868,3 +868,19 @@ function getTotalArticles() {
       document.getElementById("totalArticle").textContent = data.totalArticles + ": عدد المقالات ";     
     });
 }
+
+
+
+// جلب معلومات الحملات
+
+function fetchCampaignsIndex() {
+
+  fetch("http://localhost/zaker/campaigns/getCampaignsIndex.php")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("حدث خطأ أثناء استدعاء المقالات:", error);
+    });
+}
