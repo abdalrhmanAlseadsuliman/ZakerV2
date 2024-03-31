@@ -14,6 +14,9 @@ if  (
             $postData = $data;
             if ( isset($postData["IdCampaign"]) && !empty($postData["IdCampaign"])){
                
+
+                $sql = "DELETE FROM SchedulePrayers WHERE campaign_id = '$postData[IdCampaign]'";
+                $result = mysqli_query($connection,$sql) ;
                 $sql = "DELETE FROM campaigns WHERE id = '$postData[IdCampaign]'";
                 $result = mysqli_query($connection,$sql) ;
                 if ($result) {
