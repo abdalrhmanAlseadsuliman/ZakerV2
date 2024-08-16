@@ -26,5 +26,5 @@ if  (
 
     } else{
         echo json_encode(array('error' => 'ليس لديك صلاحيات في الوصول'));
-    }
+    } 
 
